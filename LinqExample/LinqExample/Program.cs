@@ -37,6 +37,7 @@ namespace LinqExample
             List<Person> peopleDavidovSortedDescOnly3Person = people.Where(x => x.LastName.StartsWith("D")).OrderByDescending(x => x.FirstName).Take(3).ToList();
             List<Person> peopleDavidovSortedDescOnly2PersonFromFirst = people.Where(x => x.LastName.StartsWith("D")).OrderByDescending(x => x.FirstName).Skip(1).Take(2).ToList();
 
+            // print all people earning above 7000
 
         }
     }

@@ -20,12 +20,13 @@ namespace LinqExample
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
-            this.salary = random.Next(5000, 10000);
+            this.Salary = random.Next(5000, 10000);
         }
 
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public int Age { get => age; set => age = value; }
         public string Id { get => id; set => id = value; }
+        public int Salary { get => salary; set => salary = value; }
     }
 }
