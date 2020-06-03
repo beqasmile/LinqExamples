@@ -29,6 +29,13 @@ namespace LinqExample
             List<Person> peopleBiggerDavidov = people.Where(x => x.Age > 10 && x.LastName=="Davidov").ToList();
             Dictionary<string, Person> dictpeopleBiggerDavidov = people.Where(x => x.Age > 10 && x.LastName == "Davidov").ToDictionary(x=>x.Id);
 
+            List<Person> peopleDavidovSorted = people.Where(x => x.LastName.StartsWith("D")).OrderBy(x => x.FirstName).ToList();
+            List<Person> peopleDavidovSortedDesc = people.Where(x => x.LastName.StartsWith("D")).OrderByDescending(x => x.FirstName).ToList();
+
+            peopleDavidovSorted.ForEach(x => x.Age = x.Age + 3);
+
+            List<Person> peopleDavidovSortedDescOnly3Person = people.Where(x => x.LastName.StartsWith("D")).OrderByDescending(x => x.FirstName).Take(3).ToList();
+            List<Person> peopleDavidovSortedDescOnly2PersonFromFirst = people.Where(x => x.LastName.StartsWith("D")).OrderByDescending(x => x.FirstName).Skip(1).Take(2).ToList();
 
 
         }
