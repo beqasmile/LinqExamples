@@ -13,14 +13,14 @@ namespace LinqExample
         private int age;
         private string id;
         private int salary;
-        Random random = new Random();
+       
         public Person(string firstName, string lastName, int age)
         {
             this.id = Guid.NewGuid().ToString();
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
-            this.Salary = random.Next(5000, 10000);
+           
         }
 
         public string FirstName { get => firstName; set => firstName = value; }

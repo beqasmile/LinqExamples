@@ -22,6 +22,7 @@ namespace LinqExample
             people.Add(pers2);
             people.Add(pers3);
             people.Add(pers4);
+            Random random = new Random();
 
 
             List<Person> peopleDavidov = people.Where(x => x.LastName == "Davidov").ToList();
@@ -38,6 +39,12 @@ namespace LinqExample
             List<Person> peopleDavidovSortedDescOnly2PersonFromFirst = people.Where(x => x.LastName.StartsWith("D")).OrderByDescending(x => x.FirstName).Skip(1).Take(2).ToList();
 
             // print all people earning above 7000
+            people.ToList().ForEach(z => z.Salary=random.Next(5000,10000));
+
+            people.Where(p => p.Salary >= 7000).TakeWhile(x=>x.Age>10).ToList().ForEach(z => Console.WriteLine(z.LastName + " " + z.FirstName + " " + z.Salary));
+
+
+            Console.ReadKey();
 
         }
     }
