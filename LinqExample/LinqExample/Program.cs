@@ -26,6 +26,13 @@ namespace LinqExample
 
 
             List<Person> peopleDavidov = people.Where(x => x.LastName == "Davidov").ToList();
+
+            var query1= people.Where(x => x.LastName == "Davidov");
+
+
+
+            var query2 = query1.Where(x => x.FirstName == "Moshe");
+
             List<Person> peopleBigger = people.Where(x => x.Age > 10).ToList();
             List<Person> peopleBiggerDavidov = people.Where(x => x.Age > 10 && x.LastName=="Davidov").ToList();
             Dictionary<string, Person> dictpeopleBiggerDavidov = people.Where(x => x.Age > 10 && x.LastName == "Davidov").ToDictionary(x=>x.Id);
